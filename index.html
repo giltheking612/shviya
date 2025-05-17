@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>אתר עם סיסמה</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      direction: rtl;
+    }
+
+    #message {
+      display: none;
+      font-size: 32px;
+      font-weight: bold;
+      color: darkblue;
+      margin-top: 40px;
+    }
+
+    #error {
+      color: red;
+      margin-top: 20px;
+      display: none;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>אנא הזן את הסיסמה</h2>
+  <input type="password" id="passwordInput" placeholder="סיסמה">
+  <button id="showButton">הצג</button>
+
+  <div id="error">סיסמה שגויה! נסה שוב.</div>
+  <div id="message">גיל, טמיר, יוני, יונתן, נעם, עומר, רועי, שלו</div>
+
+  <script>
+    const button = document.getElementById("showButton");
+    const message = document.getElementById("message");
+    const error = document.getElementById("error");
+
+    button.addEventListener("click", function () {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "gil123";
+
+      if (input === correctPassword) {
+        message.style.display = "block";
+        error.style.display = "none";
+      } else {
+        message.style.display = "none";
+        error.style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>
